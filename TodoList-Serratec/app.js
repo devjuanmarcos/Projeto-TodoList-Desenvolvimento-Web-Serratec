@@ -25,7 +25,7 @@ const limparTarefas = () => {
 }
 const atualizarTela = () => {
     limparTarefas();
-    banco.forEach( (item, indice) => criarItem(item.tarefa, item.status, indice));
+    banco.forEach((item, indice) => criarItem(item.tarefa, item.status, indice));
 }
 
 const inserirItem = (evento) => {
@@ -38,9 +38,16 @@ const inserirItem = (evento) => {
     }
 }
 
+const removerItem= (indice => {
+    banco.splice (indice,1);
+    atualizarTela();
+})
 const clickItem = (evento) => {
     const elemento = evento.target;
-    console.log(elemento);
+    if(elemento.type === 'button') {
+        const indice = elemento.dataset.indice;
+        removerItem(indice);
+    }
 }
 
 document.getElementById('newItem').addEventListener('keypress', inserirItem);
