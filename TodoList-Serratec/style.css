@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #ffffff1;
-    --secondary-color: #000000;
+    --primary-color: #cea97a;
+    --secondary-color: #ffffff;
 }
 
 * {
@@ -86,7 +86,7 @@ body {
 
 .todo__new-item{
     display: flex;
-    background-color: #fff59d;
+    background-color: #ffffff;
     width: 100%;
     height: 70px;
     justify-content: space-evenly;
@@ -97,7 +97,7 @@ body {
 }
 
 .todo__new-item > input{
-    background-color: #fff59d;
+    background-color: #ffffff;
     border: none;
     width: 80%;
     outline: none;
