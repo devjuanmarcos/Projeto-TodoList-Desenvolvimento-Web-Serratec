@@ -8,12 +8,12 @@ import IconButton from '@mui/material/IconButton';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { Paper } from '@mui/material';
 
-export default function TodoItem({ todo }) {
+export default function TodoItem({ todo, deleteTodo }) {
   return (
     <Paper style={{ padding: "lem 0em" }}>
       <ListItem
         secondaryAction={
-          <IconButton edge="end" aria-label="comments">
+          <IconButton edge="end" aria-label="delete" onClick={() =>deleteTodo(todo.id)}>
             <DeleteSweepIcon />
           </IconButton>
         }
