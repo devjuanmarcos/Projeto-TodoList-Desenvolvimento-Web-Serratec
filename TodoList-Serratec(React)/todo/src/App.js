@@ -1,13 +1,14 @@
+import { Container } from '@mui/material';
 import './App.css';
 import Form from './components/Form';
 import TodoItem from './components/TodoItem';
 
 function App() {
   return (
-    <div className="App">
+    <Container maxWidth="xs" style={{ marginTop: "lem"}}>
       <Form />
       <TodoItem />
-    </div>
+    </Container>
   );
 }
 
