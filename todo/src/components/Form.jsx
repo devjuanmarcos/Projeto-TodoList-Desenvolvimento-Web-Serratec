@@ -3,6 +3,13 @@ import React, { useState } from "react";
 
 export default function Form({todoHandler}) {
     const [text, setText] = useState(null);
+    const [id, setId] = useState(0);
+
+    const todoCreate = (text) => {
+        const todoObj = {text: text, id: id};
+        setId(id +1);
+        todoHandler(todoObj);
+    };
 
     return (
         <Paper style={{ padding: "lem" }}>
@@ -13,7 +20,7 @@ export default function Form({todoHandler}) {
                     onChange={(e) => setText(e.target.value)}
                     fullWidth
                 />
-                <Button variant="text" onClick={() => todoHandler(text)}>
+                <Button variant="text" onClick={() => todoCreate(text)}>
                     Adicionar
                 </Button>
             </div>
