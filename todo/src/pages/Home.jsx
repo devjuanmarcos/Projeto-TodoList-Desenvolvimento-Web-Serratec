@@ -4,12 +4,17 @@ import Form from '../components/Form';
 import TodoItem from '../components/TodoItem';
 
 export default function Home() {
-    const [todos, setTodos] = useState([1, 2]);
+    const [todos, setTodos] = useState([]);
+
+    const todoHandler = (todo) => {
+        console.log(todo)
+       //setTodos([...todos, todo]);
+    };
 
     return (
         <Container maxWidth="xs" style={{ marginTop: "lem" }}>
-            <Form />
-            <List sx={{marginTop: "lem" }}>
+            <Form todoHandler={todoHandler} />
+            <List sx={{ marginTop: "lem" }}>
                 {todos.map((todo) => (
                     <div style={{ marginTop: "lem" }}>
                         < TodoItem />
