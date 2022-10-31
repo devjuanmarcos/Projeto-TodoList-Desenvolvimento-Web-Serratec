@@ -1,6 +1,7 @@
 import { Button, Paper, TextField } from '@mui/material';
 import React, { useState } from "react";
 
+
 export default function Form({ addTodo }) {
     const [text, setText] = useState(null);
     const [id, setId] = useState(0);
@@ -14,9 +15,9 @@ export default function Form({ addTodo }) {
 
     return (
 
-        
 
-        <Paper style={{ padding: "lem" }}>
+
+        <Paper style={{padding: "2rem 1rem" }}>
             <div style={{ display: "flex", justifyContent: "center" }}>
                 <TextField id="outlined-basic"
                     label="Tarefa"
