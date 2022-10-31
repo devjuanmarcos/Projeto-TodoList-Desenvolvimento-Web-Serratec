@@ -14,13 +14,23 @@ export default function Home() {
         setTodos(filtered);
     }
 
+    const editTodo = (id, editedText) => {
+        var todosArray = [...todos];
+        for (var i in todosArray){
+            if(todosArray[i].id === id){
+                todosArray[i].text = editedText;
+            }
+        }
+       
+    }
+
     return (
         <Container maxWidth="xs" style={{ marginTop: "lem" }}>
             <Form addTodo={addTodo} />
             <List sx={{ marginTop: "lem" }}>
                 {todos.map((todo) => (
                     <div key={todo.id} style={{ marginTop: "lem" }}>
-                        < TodoItem todo={todo} deleteTodo={deleteTodo} />
+                        < TodoItem editTodo={editTodo} todo={todo} deleteTodo={deleteTodo} />
                     </div>
 
                 ))}

@@ -9,7 +9,7 @@ import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
 import { Paper } from '@mui/material';
 import EditTodoDialog from './EditTodoDialog';
 
-export default function TodoItem({ todo, deleteTodo }) {
+export default function TodoItem({ todo, deleteTodo, editTodo }) {
   const [openDialog, setOpenDialog] = React.useState(false);
 
   const dialogHandler = () => {
@@ -18,7 +18,7 @@ export default function TodoItem({ todo, deleteTodo }) {
 
   return (
     <>
-      <EditTodoDialog open={openDialog} dialogHandler={dialogHandler} todo={todo}/>
+      <EditTodoDialog editTodo ={editTodo} open={openDialog} dialogHandler={dialogHandler} todo={todo}/>
       <Paper style={{ padding: "0.5em 0em" }} >
         <ListItem
           secondaryAction={
